@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Micro Dungeon Maker by Evidently Cube</title>
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<script>
+		function globalErrorHandler(e) {
+			const wrapper = document.createElement('div');
+			wrapper.style.position = "fixed";
+			wrapper.style.background = "rgba(255, 128, 128, 0.5)";
+			wrapper.style.backdropFilter = "blur(4px)";
+			wrapper.style.left = "0";
+			wrapper.style.right = "0";
+			wrapper.style.top = "0";
+			wrapper.style.bottom = "0";
+			wrapper.style.display = "flex";
+			wrapper.style.alignItems = "center";
+			wrapper.style.justifyContent = "center";
+			wrapper.style.flexDirection = "column";
+
+			const header = document.createElement('h1');
+			header.style.fontSize = "40px";
+			header.style.fontWeight = "bold";
+			header.style.marginBottom = "20px";
+			header.textContent = "Error";
+
+			const body = document.createElement('p');
+			body.style.textAlign = "center";
+			body.style.fontSize = "16px";
+			body.style.lineHeight = "20px";
+			if (typeof e === "string") {
+				body.innerText = e;
+
+			} else if (e.target && e.target.tagName === 'SCRIPT') {
+				body.innerHTML = [
+					"Fatal error when loading the scripts.",
+					"See the developer console for more details.",
+					"Try refreshing the page but it's unlikely to be helpful, the developer must be notified to fix it.",
+					'You can <a href="https://github.com/EvidentlyCube/micro-dungeon-maker/issues">create a new GitHub issue<a> or'
+						+ ' <a href="mailto:maurycy@evidentlycube.com">email me directly</a>.'
+				].join("<br>");
+			} else {
+				console.log(e);
+
+				body.innerHTML = [
+					"An unknown error has occurred.",
+					"See the developer console for more details.",
+					'You can <a href="https://github.com/EvidentlyCube/micro-dungeon-maker/issues">create a new GitHub issue<a> or'
+						+ ' <a href="mailto:maurycy@evidentlycube.com">email me directly</a>.'
+				].join("<br>");
+
+			}
+
+			wrapper.appendChild(header);
+			wrapper.appendChild(body);
+			document.body.appendChild(wrapper);
+		}
+		window.onerror = globalErrorHandler;
+		window.onunhandledrejection  = globalErrorHandler;
+	</script>
+</head>
+
+<body>
+	<div id="layout-top" class="menu">
+		<span>Micro Dungeon Maker</span>
+	</div>
+	<div id="layout-body">
+		<div id="map-container">
+			<div id="map"></div>
+			<div id="cursor-mouse" class="cursor"></div>
+			<div id="cursor" class="cursor"></div>
+		</div>
+	</div>
+	<div id="layout-bottom" class="menu">
+		<a href="https://github.com/EvidentlyCube/micro-dungeon-maker
+		target="_blank">GITHUB</a>
+		&middot;
+		<a href="https://github.com/EvidentlyCube/micro-dungeon-maker/blob/main/CREDITS.md"
+		target="_blank">CREDITS</a>
+	</div>
+	<div id="toolbar-wrapper">
+		<div id="toolbar"></div>
+	</div>
+	<div id="tooltip"></div>
+	<div id="help">
+		<header></header>
+		<ul></ul>
+	</div>
+	<div id="focus-overlay">
+		<header>No Focus</header>
+		<p>Click anywhere to allow keyboard interaction</p>
+	</div>
+	<div id="splash-modal">
+		<div id="splash-box">
+			<header>Micro Dungeon Maker</header>
+			<p>This is a tool for quick prototyping and designing dungeons for tabletop RPGs. The main features are:</p>
+			<ul>
+				<li><strong>Keyboard-first</strong> &mdash; made to be pleasant to use with just the keyboard; mouse is still a valid option.</li>
+				<li><strong>Fast & responsive</strong> &mdash; no frills and needless animations, things happen immediately for rapid workflow.</li>
+				<li><strong>Readable</strong> &mdash; toned but contrasting colors, easy to read and understand the map you made.</li>
+			</ul>
+			<p>Micro Dungeon Maker's job is to make it easy and quick to put an idea to <em>paper</em>, see how viable it is and improve.</p>
+			<br>
+			<p align="center"><strong>Click to close</strong></p>
+		</div>
+	</div>
+	<script src="index.js" type="module" onerror="globalErrorHandler(event)"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+#splash-modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	backdrop-filter: blur(4px);
+	background: rgba(var(--color-bg-alt), 0.75);
+	opacity: var(--splash-fade);
+
+	z-index: 9999;
+}
+
+#splash-box {
+	background: rgb(var(--color-bg));
+	border: 4px solid rgb(var(--color-wall));
+	padding: 32px;
+	border-radius: 16px;
+}
+
+#splash-box header {
+	font-size: 32px;
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+#splash-box p {
+	line-height: 20px;
+	margin-bottom: 8px;
+}
+
+#splash-box ul {
+	padding-left: 32px;
+	margin-bottom: 8px;
+}
+
+#splash-box li {
+	list-style-type: disc;
+	line-height: 20px;
+}

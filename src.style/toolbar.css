@@ -1,0 +1,51 @@
+#toolbar-wrapper {
+	position: fixed;
+	top: var(--header-height);
+	bottom: var(--header-height);
+	display: flex;
+	align-items: center;
+}
+#toolbar {
+	border: 1px solid rgb(var(--color-wall));
+	border-left: 0;
+	display: flex;
+	flex-direction: column;
+	background: rgb(var(--color-bg));
+	padding: 4px;
+}
+
+#toolbar > span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+}
+
+#toolbar > span:hover {
+	background: rgb(var(--color-bg-alt));
+}
+
+#toolbar > span.selected {
+	background: rgb(var(--color-wall));
+}
+
+#toolbar i {
+	--ggs: 1;
+}
+
+#toolbar > span.selected i {
+	color: rgb(var(--color-bg));
+}
+
+#toolbar hr {
+	color: rgb(var(--color-wall));
+	margin: 8px 4px;
+}
+
+@media print {
+	#toolbar-wrapper {
+		display: none;
+	}
+}

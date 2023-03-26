@@ -1,0 +1,35 @@
+#focus-overlay {
+	position: fixed;
+	top: 48px;
+	left: calc(50% - 200px);
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: rgb(var(--color-wall));
+	backdrop-filter: blur(calc(var(--focus-overlay-fade) * 4px));
+	user-select: none;
+	pointer-events: none;
+	background: rgba(var(--color-bg-alt), calc(var(--focus-overlay-fade) * 0.75));
+	padding: 12px 24px;
+	border: 4px solid rgba(var(--color-wall), var(--focus-overlay-fade));
+	border-radius: 24px;
+}
+
+#focus-overlay>header {
+	font-size: 40px;
+	opacity: var(--focus-overlay-fade);
+	margin-bottom: 20px;
+}
+
+#focus-overlay>p {
+	font-size: 20px;
+	opacity: var(--focus-overlay-fade);
+}
+
+@media print {
+	#focus-overlay {
+		display: none !important;
+	}
+}

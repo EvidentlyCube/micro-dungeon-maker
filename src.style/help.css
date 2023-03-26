@@ -1,0 +1,30 @@
+#help {
+	position: fixed;
+	left: 10px;
+	bottom: 42px;
+
+	background: rgb(var(--color-bg));
+	border: 1px solid rgb(var(--color-wall));
+	border-radius: 4px;
+	padding: 8px;
+}
+
+#help header {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#help ul {
+	padding-left: 12px;
+}
+
+#help li {
+	list-style: disc;
+	font-size: 11px;
+}
+
+@media print {
+	#help {
+		display: none !important;
+	}
+}

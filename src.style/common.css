@@ -1,0 +1,18 @@
+kbd {
+	font-family: monospace;
+	border: 1px solid rgb(var(--color-wall));
+	padding: 2px 6px;
+	margin: 2px 0;
+	border-radius: 4px;
+	display: inline-block;
+	text-transform: uppercase;
+	background: rgb(var(--color-bg-alt));
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}

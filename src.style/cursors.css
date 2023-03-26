@@ -1,0 +1,62 @@
+#cursor {
+	position: absolute;
+	width: calc(var(--edge) + 3px);
+	height: calc(var(--edge) + 3px);
+	border: 3px solid red;
+	left: calc(var(--edge) * var(--cursor-x) - 2px);
+	top: calc(var(--edge) * var(--cursor-y) - 2px);
+	z-index: 999;
+	pointer-events: none;
+	transition:
+		top 0.1s ease 0s,
+		left 0.1s ease 0s;
+}
+
+#cursor-mouse {
+	display: var(--cursor-mouse-display);
+	position: absolute;
+	width: calc(var(--edge) + 3px);
+	height: calc(var(--edge) + 3px);
+	border: 3px solid turquoise;
+	left: calc(var(--edge) * var(--cursor-mouse-x) - 2px);
+	top: calc(var(--edge) * var(--cursor-mouse-y) - 2px);
+	z-index: 999;
+	pointer-events: none;
+	transition:
+		top 0.05s ease 0s,
+		left 0.05s ease 0s;
+}
+
+.cursor.text-type::after {
+	content: "|";
+	color: rgb(var(--color-wall));
+	position: absolute;
+	text-align: center;
+	line-height: var(--edge);
+	font-size: calc(var(--edge) * 0.8);
+	width: var(--edge);
+	height: var(--edge);
+	top: calc(var(--edge) * -0.1);
+	animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+	0% {
+		color: rgb(var(--color-wall));
+	}
+	49% {
+		color: rgb(var(--color-wall));
+	}
+	50% {
+		color: rgb(var(--color-bg));
+	}
+	100% {
+		color: rgb(var(--color-bg));
+	}
+}
+
+@media print {
+	.cursor {
+		display: none !important;
+	}
+}

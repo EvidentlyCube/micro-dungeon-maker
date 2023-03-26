@@ -1,0 +1,24 @@
+:root {
+	--header-height: 32px;
+	--footer-height: 32px;
+
+	--cursor-x: 0;
+	--cursor-y: 0;
+	--cursor-mouse-x: 0;
+	--cursor-mouse-y: 0;
+	--cursor-mouse-display: none;
+	--color-bg: 235, 228, 213;
+	--color-bg-alt: 224, 214, 191;
+	--color-wall: 50, 41, 22;
+	--edge: 56px;
+	--edge-icon: calc(var(--edge) * 0.8);
+	--focus-overlay-fade: 1;
+	--splash-fade: 1;
+	--ggs: 2;
+}
+
+@media print {
+	:root {
+		--color-bg: 255, 255, 255;
+	}
+}
