@@ -5,7 +5,7 @@ import MAP_API_EXTENSION from "../MapApiExtension.js";
 /** @type {Tool} */
 const TOOL_FILL = {
 	get tooltip() {
-		return "Fill (F) - Flood fill area with walls or floors"
+		return "<header>Fill (F)</header>Flood fill area"
 	},
 
 	get iconDetails() {

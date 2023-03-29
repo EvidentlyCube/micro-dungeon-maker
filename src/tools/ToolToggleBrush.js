@@ -10,7 +10,7 @@ let drawingType = null;
 /** @type {Tool} */
 const TOOL_TOGGLE_BRUSH = {
 	get tooltip() {
-		return "Brush (V) - Toggle walls and floors at a point"
+		return "<header>Brush (V)</header>Draw walls and floors"
 	},
 
 	get iconDetails() {

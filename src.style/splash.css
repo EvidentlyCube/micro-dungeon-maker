@@ -1,9 +1,9 @@
 #splash-modal {
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: var(--header-height);
 	right: 0;
-	bottom: 0;
+	bottom: var(--footer-height);
 
 	display: flex;
 	justify-content: center;

@@ -34,6 +34,7 @@ body {
 
 #layout-bottom {
 	display: flex;
+	gap: 16px;
 	justify-content: center;
 	align-items: center;
 	flex: 0 0 var(--footer-height);
