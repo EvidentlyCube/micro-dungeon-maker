@@ -2,6 +2,8 @@ import BUTTON_UNDO from "../buttons/ButtonUndo.js";
 import TOOL_FILL from "../tools/ToolFill.js";
 import TOOL_ICONS from "../tools/ToolIcons.js";
 import TOOL_TEXT from "../tools/ToolText.js";
+import TOOL_SHIFT from "../tools/ToolShift.js";
+import TOOL_RESIZE from "../tools/ToolResize.js";
 import TOOL_TOGGLE_BRUSH from "../tools/ToolToggleBrush.js";
 import { describeMousepress, getDeltaForArrow } from "../Utils.js";
 import TOOLS_CONTROLLER from "./ToolsController.js";
@@ -25,6 +27,10 @@ const KEYBOARD_CONTROLLER = {
 		HANDLERS_DOWN.set('f', () => TOOLS_CONTROLLER.selectTool(TOOL_FILL));
 		HANDLERS_DOWN.set('t', () => TOOLS_CONTROLLER.selectTool(TOOL_TEXT));
 		HANDLERS_DOWN.set('i', () => TOOLS_CONTROLLER.selectTool(TOOL_ICONS));
+		HANDLERS_DOWN.set('ctrl+alt+s', () => TOOLS_CONTROLLER.selectTool(TOOL_SHIFT));
+		HANDLERS_DOWN.set('ś', () => TOOLS_CONTROLLER.selectTool(TOOL_SHIFT));
+		HANDLERS_DOWN.set('ctrl+alt+c', () => TOOLS_CONTROLLER.selectTool(TOOL_RESIZE));
+		HANDLERS_DOWN.set('ć', () => TOOLS_CONTROLLER.selectTool(TOOL_RESIZE));
 		HANDLERS_DOWN.set('ctrl+z', () => TOOLS_CONTROLLER.executeButton(BUTTON_UNDO, getMousepress(0, false, false, false)));
 	}
 }
@@ -55,6 +61,8 @@ function getMousepress(button, ctrlKey, altKey, shiftKey) {
  */
 function onKeyDown(event) {
 	const keypress = describeKeypress(event);
+
+	console.log(keypress.summary);
 
 	TOOLS_CONTROLLER.handle.keyDown(keypress, () => event.preventDefault());
 

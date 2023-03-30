@@ -8,7 +8,7 @@ let isMouseDragging = false;
 /** @type {Tool} */
 const TOOL_RESIZE = {
 	get tooltip() {
-		return "<header>Resize</header>Change the dimensions of the map"
+		return "<header>Resize (Ctrl+Alt+C)</header>Change the dimensions of the map"
 	},
 
 	get iconDetails() {

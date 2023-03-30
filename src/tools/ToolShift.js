@@ -8,7 +8,7 @@ let isMouseDragging = false;
 /** @type {Tool} */
 const TOOL_SHIFT = {
 	get tooltip() {
-		return "<header>Shift</header>Shift the map with wrapping"
+		return "<header>Shift (Ctrl+Alt+S)</header>Shift the map with wrapping"
 	},
 
 	get iconDetails() {
